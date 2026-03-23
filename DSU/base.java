@@ -44,3 +44,23 @@ class Disjoint{
 
     }
 }
+
+public static Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        Disjoint ds = new Disjoint(n);
+        ds.unionByRank(0,1);
+        ds.unionByRank(1,4);
+        ds.unionByRank(2,4);
+        ds.unionByRank(2,5);
+
+        // wheather 2 ele belong to same group or not
+        if(ds.find(1)==ds.find(4)){
+            System.out.print("1 nad 4 belong to same group");
+        }else{
+            System.out.print("1 nad 4 do not belong to same group");
+        }
+    }
+}
