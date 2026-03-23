@@ -20,10 +20,27 @@ class Disjoint{
     }
 
     void unionNormal(int x,int y){
-        
+        int rootx = find(x);
+        int rooty = find(y);
+
+        if(rootx!=rooty){
+            parent[rooty] = rootx;
+        }
     }
 
     void unionByRank(int x,int y){
+        int rootx = find(x);
+        int rooty = find(y);
+
+        if(rootx==rooty)return;
+        if(rank[rootx]<rank[rooty]){
+            parent[rootx] = rooty;
+        }else if(rank[rootx]>rank[rooty]){
+            parent[rooty] = rootx;
+        }else{
+            parent[rootx] = rooty;
+            rank[rooty]++;
+        }
 
     }
 }
