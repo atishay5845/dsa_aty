@@ -28,7 +28,7 @@ public:
       parent[x] = find(parent[x]);
     }
     return parent[x];
-  }
+  } // time complexity of find is O(logn) and unionByRank is O(logn) and overall time complexity is O(nlogn)
 
   void unionByRank(int x, int y)
   {
