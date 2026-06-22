@@ -71,6 +71,7 @@ int main()
   for (int i = 0; i < q; i++)
   {
     int q1, q2;
+    cin >> q1 >> q2;
     if (dsu.find(q1) == dsu.find(q2))
     {
       cout << "TLE" << endl;
