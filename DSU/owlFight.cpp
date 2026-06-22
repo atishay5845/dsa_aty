@@ -38,18 +38,13 @@ public:
     if (rootX == rootY)
       return;
 
-    if (rank[rootX] < rank[rootY])
-    {
-      parent[rootX] = rootY;
-    }
-    else if (rank[rootX] > rank[rootY])
+    if (rootX > rootY)
     {
       parent[rootY] = rootX;
     }
     else
     {
       parent[rootX] = rootY;
-      rank[rootY]++;
     }
   }
 };
@@ -72,14 +67,16 @@ int main()
   {
     int q1, q2;
     cin >> q1 >> q2;
-    if (dsu.find(q1) == dsu.find(q2))
+    int r1 = dsu.find(q1);
+    int r2 = dsu.find(q2);
+
+    if (r1 == r2)
     {
-      cout << "TLE" << endl;
+      cout << "TIE\n";
     }
     else
     {
-      int ans = q1 > q2 ? q1 : q2;
-      cout << ans << endl;
+      cout << (r1 > r2 ? q1 : q2) << "\n";
     }
   }
 }
